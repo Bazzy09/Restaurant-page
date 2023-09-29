@@ -5,7 +5,7 @@ function loadHomePage() {
 
   const backgroundImage = document.createElement('div');
   backgroundImage.classList.add('background-image'); 
-  backgroundImage.style.backgroundImage = 'url("path/to/your-image.jpg")'; 
+  // backgroundImage.style.backgroundImage = 'url(./assets/restaurant_home.jpg)'; 
 
   homeDiv.appendChild(backgroundImage);
 

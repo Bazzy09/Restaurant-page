@@ -2,23 +2,11 @@
     margin: 0;
     padding: 0;
 }
-.nav-link {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: #333;
-  }
-  
-  .nav-link-child {
-    display: inline-block;
-    margin-right: 20px;
-    font-size: 16px; 
-    color: #fff; 
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .nav-link-child:hover {
-    color: #ff5722;
-  }
-  
+ 
+.background-image{
+  background-image: url('../../src/assets/restaurant_home.jpg');
+  width: auto;
+  height: 400px;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}

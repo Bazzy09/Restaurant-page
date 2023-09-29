@@ -9,10 +9,11 @@ function createHeader() {
 
   const restaurantName = document.createElement("h1");
   restaurantName.classList.add("restaurant-name");
-  restaurantName.textContent = "The 5th";
-
-  header.appendChild(restaurantName);
+  restaurantName.textContent = "The 5th Chops";
+  
   header.appendChild(createNav());
+  header.appendChild(restaurantName);
+  
 
   return header;
 }
@@ -72,9 +73,9 @@ function clearContent() {
 
 function initializeWebsite() {
   const content = document.getElementById("content");
-
-  content.appendChild(createHeader());
+  
   content.appendChild(createMain());
+  content.appendChild(createHeader());
   setActiveButton(document.querySelector(".button-nav"));
   loadHome();
 }
