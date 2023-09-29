@@ -20,42 +20,10 @@ function createHeader() {
 function createNav() {
   const nav = document.createElement("nav");
 
-  const homeButton = document.createElement("button");
-  homeButton.classList.add("button-nav");
-  homeButton.textContent = "Home";
-  homeButton.addEventListener("click", (e) => {
-    if (e.target.classList.contains("active")) return;
-    setActiveButton(homeButton);
-    clearContent();
-    loadHome();
-  });
-
-  const menuButton = document.createElement("button");
-  menuButton.classList.add("button-nav");
-  menuButton.textContent = "Menu";
-  menuButton.addEventListener("click", (e) => {
-    if (e.target.classList.contains("active")) return;
-    setActiveButton(menuButton);
-    loadMenu();
-  });
-
-  const reservationButton  = document.createElement("button"); 
-  reservationButton.classList.add("button-nav");
-  reservationButton.textContent = "Reservation";
-  reservationButton.addEventListener("click", (e) => {
-    if (e.target.classList.contains("active")) return;
-    setActiveButton(reservationButton);
-    loadReservation();
-  });
-
-  const contactButton = document.createElement("button");
-  contactButton.classList.add("button-nav");
-  contactButton.textContent = "Contact";
-  contactButton.addEventListener("click", (e) => {
-    if (e.target.classList.contains("active")) return;
-    setActiveButton(contactButton);
-    loadContact();
-  });
+  const homeButton = createNavButton("Home", loadHome);
+  const menuButton = createNavButton("Menu", loadMenu);
+  const reservationButton = createNavButton("Reservation", loadReservation);
+  const contactButton = createNavButton("Contact", loadContact);
 
   nav.appendChild(homeButton);
   nav.appendChild(menuButton);
@@ -63,6 +31,19 @@ function createNav() {
   nav.appendChild(contactButton);
 
   return nav;
+}
+
+function createNavButton(text, onClickFunction) {
+  const button = document.createElement("button");
+  button.classList.add("button-nav");
+  button.textContent = text;
+  button.addEventListener("click", () => {
+    if (button.classList.contains("active")) return;
+    setActiveButton(button);
+    clearContent();
+    onClickFunction();
+  });
+  return button;
 }
 
 function setActiveButton(button) {
@@ -84,6 +65,10 @@ function createMain() {
   return main;
 }
 
+function clearContent() {
+  const content = document.getElementById("content");
+  content.innerHTML = "";
+}
 
 function initializeWebsite() {
   const content = document.getElementById("content");
