@@ -1,3 +1,3 @@
 import initializeWebsite from "./website";
 
-initializeWebsite();
+document.addEventListener('DOMContentLoaded', initializeWebsite);
