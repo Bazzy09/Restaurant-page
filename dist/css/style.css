@@ -1,19 +1,29 @@
-#content {
+.nav-link {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #f0f0f0;
+  background-color: #fff;
 }
 
-.home-page {
+.nav-link-child {
+  flex: 1;
   text-align: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); 
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
+.nav-link-child a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.1s ease;
+}
+
+.nav-link-child a:hover {
+  background-color: #555;
+}
+
+/* 
 .background-image {
   background-image: url('../../src/assets/restaurant_home.jpg');
   width: auto;
@@ -24,4 +34,4 @@
   background-position: center;
   width: 100%;
   border-radius: 10px 10px 0 0;
-}
+} */
