@@ -3,12 +3,12 @@ import loadMenuPage from './menu';
 import loadReservationPage from './reservation';
 import loadContactPage from './contact';
 
-function clearContent () {
+function clearContent() {
   const content = document.getElementById('content');
   while (content.firstChild) {
     content.removeChild(content.firstChild);
   }
-} 
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const content = document.getElementById('content');
@@ -22,7 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const homeAnchor = document.createElement('a');
   homeAnchor.href = "#";
   homeAnchor.textContent = "Home";
-  homeAnchor.addEventListener('click', loadHomePage);
+  homeAnchor.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    clearContent();
+    loadHomePage();
+  });
   homeLink.appendChild(homeAnchor);
   navLinks.appendChild(homeLink);
 
@@ -31,7 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuAnchor = document.createElement('a');
   menuAnchor.href = "#menu";
   menuAnchor.textContent = "Menu";
-  menuAnchor.addEventListener('click', loadMenuPage);
+  menuAnchor.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    clearContent();
+    loadMenuPage();
+  });
   menuLink.appendChild(menuAnchor);
   navLinks.appendChild(menuLink);
 
@@ -40,7 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const reservationAnchor = document.createElement('a');
   reservationAnchor.href = "#reservation";
   reservationAnchor.textContent = "Reservation";
-  reservationAnchor.addEventListener('click', loadReservationPage);
+  reservationAnchor.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    clearContent();
+    loadReservationPage();
+  });
   reservationLink.appendChild(reservationAnchor);
   navLinks.appendChild(reservationLink);
 
@@ -49,9 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactAnchor = document.createElement('a');
   contactAnchor.href = "#contact";
   contactAnchor.textContent = "Contact";
-  contactAnchor.addEventListener('click', loadContactPage);
+  contactAnchor.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    clearContent();
+    loadContactPage();
+  });
   contactLink.appendChild(contactAnchor);
   navLinks.appendChild(contactLink);
-
-  loadHomePage();
 });
+
+loadHomePage();
