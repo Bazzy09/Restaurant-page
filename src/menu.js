@@ -9,20 +9,20 @@ function loadMenuPage() {
     {
       name: 'beans and plantain',
       description: 'beans porrage, with plantain',
-      price: '$12.99',
-      imageSrc: 'src/assets/beans.jpg.jpeg',
+      price: '₦1200',
+      // imageSrc: 'src/assets/beans.jpg.jpeg',
     },
     {
       name: 'Muschel spaghetti',
       description: 'Classic spaghetti with tomato, muschel, and basil',
-      price: '$10.99',
-      imageSrc: 'src/assets/Muschel-Spaghetti.jpeg',
+      price: '₦1500',
+      // imageSrc: 'src/assets/Muschel-Spaghetti.jpeg',
     },
     {
       name: ' moi moi',
       description: 'Freshly cooked grinded beans with egg',
-      price: '$14.99',
-      imageSrc: 'Nigerian_Moi-Moi.png',
+      price: '₦500',
+      // imageSrc: 'src/assets/Nigerian_Moi-Moi.png',
     },
   ];
 
@@ -43,7 +43,7 @@ function loadMenuPage() {
     const itemPrice = document.createElement('p');
     itemPrice.textContent = item.price;
 
-    menuItemDiv.appendChild(itemImage);
+    // menuItemDiv.appendChild(itemImage);
     menuItemDiv.appendChild(itemName);
     menuItemDiv.appendChild(itemDescription);
     menuItemDiv.appendChild(itemPrice);
