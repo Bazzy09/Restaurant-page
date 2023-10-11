@@ -1,27 +1,38 @@
-/* .nav-link {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fixed-nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #808080;
+  color: #0000; 
+  padding: 10px 0;
+  text-align: center;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-link-child {
   display: inline-block;
-  margin-right: 20px;
-  padding: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff; 
-  transition: background-color 0.2s ease;
 }
 
 .nav-link-child a {
-  display: block;
   text-decoration: none;
   color: #fff;
+  font-weight: bold;
 }
 
 .nav-link-child a:hover {
@@ -31,7 +42,7 @@
 }
 
 #content {
-  text-align: center;
+  margin-top: 60px;
   padding: 20px;
 }
 
@@ -160,3 +171,5 @@ button[type="submit"]:hover {
 .footer p {
   margin: 0;
 }
+
+
