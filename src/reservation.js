@@ -2,7 +2,7 @@ function loadReservationPage() {
   const content = document.getElementById('content');
 
   const reservationDiv = document.createElement('div');
-  reservationDiv.textContent = 'Please fill out the form below to make a restaurant reservation.';
+  reservationDiv.textContent = 'Please fill out the form below to make a reservation.';
 
   const reservationForm = document.createElement('form');
   reservationForm.id = 'reservationForm';

@@ -10,64 +10,41 @@ function clearContent() {
   }
 }
 
+function loadPage(pageLoader) {
+  pageLoader();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const content = document.getElementById('content');
+  const nav = document.createElement('nav');
+  nav.classList.add('fixed-nav');
+  document.body.appendChild(nav);
+
+  const links = [
+    { text: 'Home', href: '#', loader: loadHomePage },
+    { text: 'Menu', href: '#menu', loader: loadMenuPage },
+    { text: 'Reservation', href: '#reservation', loader: loadReservationPage },
+    { text: 'Contact', href: '#contact', loader: loadContactPage },
+  ];
 
   const navLinks = document.createElement('ul');
-  navLinks.classList.add("nav-link");
-  content.appendChild(navLinks);
+  navLinks.classList.add('nav-link');
+  nav.appendChild(navLinks);
 
-  const homeLink = document.createElement('li');
-  homeLink.classList.add("nav-link-child");
-  const homeAnchor = document.createElement('a');
-  homeAnchor.href = "#";
-  homeAnchor.textContent = "Home";
-  homeAnchor.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    clearContent();
-    loadHomePage();
+  links.forEach((linkDetail) => {
+    const link = document.createElement('li');
+    link.classList.add('nav-link-child');
+    const anchor = document.createElement('a');
+    anchor.href = linkDetail.href;
+    anchor.textContent = linkDetail.text;
+    anchor.addEventListener('click', (event) => {
+      event.preventDefault();
+      clearContent();
+      loadPage(linkDetail.loader);
+    });
+    link.appendChild(anchor);
+    navLinks.appendChild(link);
   });
-  homeLink.appendChild(homeAnchor);
-  navLinks.appendChild(homeLink);
 
-  const menuLink = document.createElement('li');
-  menuLink.classList.add("nav-link-child");
-  const menuAnchor = document.createElement('a');
-  menuAnchor.href = "#menu";
-  menuAnchor.textContent = "Menu";
-  menuAnchor.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    clearContent();
-    loadMenuPage();
-  });
-  menuLink.appendChild(menuAnchor);
-  navLinks.appendChild(menuLink);
-
-  const reservationLink = document.createElement('li');
-  reservationLink.classList.add("nav-link-child");
-  const reservationAnchor = document.createElement('a');
-  reservationAnchor.href = "#reservation";
-  reservationAnchor.textContent = "Reservation";
-  reservationAnchor.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    clearContent();
-    loadReservationPage();
-  });
-  reservationLink.appendChild(reservationAnchor);
-  navLinks.appendChild(reservationLink);
-
-  const contactLink = document.createElement('li');
-  contactLink.classList.add("nav-link-child");
-  const contactAnchor = document.createElement('a');
-  contactAnchor.href = "#contact";
-  contactAnchor.textContent = "Contact";
-  contactAnchor.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    clearContent();
-    loadContactPage();
-  });
-  contactLink.appendChild(contactAnchor);
-  navLinks.appendChild(contactLink);
+  loadPage(loadHomePage);
 });
-
-loadHomePage();
