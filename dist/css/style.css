@@ -1,0 +1,164 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.fixed-nav {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav-link {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  margin: 0;
+}
+
+.nav-link-child {
+  display: inline;
+  padding: 15px;
+}
+
+.nav-link-child a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.home-content {
+  background-color: #f6f6f6;
+  padding: 60px;
+  text-align: center;
+  color: #333;
+}
+
+.background-image {
+  background-image: url('../../src/assets/jollofrice.jpg');
+  background-size: cover;
+  height: 400px;
+}
+
+.restaurant-name {
+  font-size: 48px;
+  margin: 10px 0;
+  color: #e74c3c;
+}
+
+.slogan {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.about-us-heading {
+  font-size: 30px;
+  margin-top: 40px;
+  color: #e74c3c;
+}
+
+.about-us-text {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.menu-page {
+  background-color: #333;
+  padding: 60px;
+  text-align: center;
+  color: #333;
+}
+
+.menu-item {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #333;
+}
+
+.menu-item h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.menu-item p {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+}
+
+#reservation {
+  background-color: #f6f6f6;
+  padding: 60px;
+  text-align: center;
+  color: #333;
+}
+
+form {
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime-local"],
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin-top: 5px;
+  border: 2px solid #000;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 2em;
+}
+
+button:hover {
+  background-color: #d63031;
+}
+
+#contact {
+  background-color: #fff;
+  padding: 60px;
+  text-align: center;
+  color: #333;
+}
+
+.social-media-link {
+  text-decoration: none;
+  color: #e74c3c;
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+}
